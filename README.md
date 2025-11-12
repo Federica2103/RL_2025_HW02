@@ -49,7 +49,7 @@ $ ros2 launch iiwa_bringup iiwa.launch.py
 In another terminal launch the following command:
 
 ```shell
-$	ros2 launch ros2_kdl_package kdl_node.launch.py
+$ ros2 launch ros2_kdl_package kdl_node.launch.py
 ```
 By default the node publishes joint position commands. To use the velocity commands you have to launch the robot with:
 
@@ -65,7 +65,7 @@ $ ros2 run ros2_kdl_package ros2_kdl_node cmd_interface:=velocity
 ## **1B. Simulation of the Kuka IIWA robot in RViz with the choice of the controller**
 In the first terminal launch the commands to start RViz:
 ```shell
-$	ros2 launch iiwa_bringup iiwa.launch.py coomand_interface:="velocity" robot_controller:="velocity_command"
+$ ros2 launch iiwa_bringup iiwa.launch.py coomand_interface:="velocity" robot_controller:="velocity_command"
 ```
 In a second terminal launch the following command for the velocity control:
 
@@ -93,7 +93,7 @@ This section details how to build and run the Vision Based Control solution.
 ## **Detect an ArucoTag in a Gazebo world**
 In the first terminal launch the command to visualize the robot in Gazebo world:
  ```shell
-  $	ros2 launch ros2_kdl_package gaz.launch.py
+  $ ros2 launch ros2_kdl_package gaz.launch.py
  ```
 Then launch:
 
@@ -107,11 +107,11 @@ Switch the topic of image_view.
 If you want activate a vision-control based put this command:
 
 ```shell
-$	ros2 run ros2_kdl_package ros2_vision_control_node cmd_interface:=velocity ctrl:=vision
+$ ros2 run ros2_kdl_package ros2_vision_control_node cmd_interface:=velocity ctrl:=vision
 ```
 To switch the auco tag position whit CLI launch this command:
 
 ```shell
-$	ros2 service call /world/default/set_pose ros_gz_interfaces/srv/SetEntityPose 	"{entity: {name: 'aruco_tag', type: 1}, pose: {position: {x: 1.3, y: 0.6, z: 0.2}, 	orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}}"
+$ ros2 service call /world/default/set_pose ros_gz_interfaces/srv/SetEntityPose 	"{entity: {name: 'aruco_tag', type: 1}, pose: {position: {x: 1.3, y: 0.6, z: 0.2}, 	orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}}"
 ```
 you can set different position and orientation.
