@@ -51,7 +51,7 @@ In another terminal launch the following command:
 ```shell
 $ ros2 launch ros2_kdl_package kdl_node.launch.py
 ```
-By default the node publishes joint position commands. To use the velocity look to point 2b.
+By default the node publishes joint position commands. To use the velocity look to point 1b.
 
 ## **1B. Simulation of the Kuka IIWA robot in RViz with the choice of the controller**
 In the first terminal launch the commands to start RViz:
