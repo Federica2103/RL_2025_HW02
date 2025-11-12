@@ -72,7 +72,7 @@ In a second terminal launch the following command for the velocity control:
  ```shell
  $	ros2 launch ros2_kdl_package kdl_node.launch.py cmd_interface:=velocity ctrl:=<type>
 ```
-where <type> can be 'velocity_ctrl' or 'velocity_ctrl_null' (to implement a controller that avoids joint limits)
+where < type > can be 'velocity_ctrl' or 'velocity_ctrl_null' (to implement a controller that avoids joint limits)
 
 ## **1C. Simulation of the Kuka IIWA robot in RViz with the Action Client structure**
 To simulate with action-client service, after you launched with velocity command, in another terminal you have to launch:
@@ -102,7 +102,7 @@ Then launch:
 ```
 Switch the topic of image_view.
 
-## ** Loop-at-point task with vision-control-based**
+## **Loop-at-point task with vision-control-based**
 
 If you want activate a vision-control based put this command:
 
