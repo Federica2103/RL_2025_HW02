@@ -71,21 +71,21 @@ In the first terminal launch the commands to start RViz:
     ```
 In a second terminal launch the following command for the velocity control:
 
-   ```shell
-      $	ros2 launch ros2_kdl_package kdl_node.launch.py cmd_interface:=velocity ctrl:=<type>
-   ```
+ ```shell
+ $	ros2 launch ros2_kdl_package kdl_node.launch.py cmd_interface:=velocity ctrl:=<type>
+```
 where <type> can be 'velocity_ctrl' or 'velocity_ctrl_null' (to implement a controller that avoids joint limits)
 
 ## **1C. Simulation of the Kuka IIWA robot in RViz with the Action Client structure**
 To simulate with action-client service, after you launched with velocity command, in another terminal you have to launch:
 
-   ```shell
-      $	ros2 launch ros2_kdl_package kdl_action.launch.py 
-   ```
+```shell
+$	ros2 launch ros2_kdl_package kdl_action.launch.py 
+```
 And then:
 
 ```shell
-      $	ros2 run ros2_kdl_package action_client_node <x> <y> <z> 
+$	ros2 run ros2_kdl_package action_client_node <x> <y> <z> 
 ```
 
 ## 🏃 Vision Based Control
@@ -94,14 +94,14 @@ This section details how to build and run the Vision Based Control solution.
 
 ## **Detect an ArucoTag in a Gazebo world**
 In the first terminal launch the command to visualize the robot in Gazebo world:
-    ```shell
-      $	ros2 launch ros2_kdl_package gaz.launch.py
-    ```
+ ```shell
+  $	ros2 launch ros2_kdl_package gaz.launch.py
+ ```
 Then launch:
 
-   ```shell
-      $	ros2 launch aruco_ros single.launch.py marker_size:=0.1 marker_id:=18
-   ```
+```shell
+ $	ros2 launch aruco_ros single.launch.py marker_size:=0.1 marker_id:=18
+```
 Switch the topic of image_view.
 
 ## **. Loop-at-point task with vision-control-based**
@@ -109,11 +109,10 @@ Switch the topic of image_view.
 If you want activate a vision-control based put this command:
 
 ```shell
-      $	ros2 run ros2_kdl_package ros2_vision_control_node cmd_interface:=velocity ctrl:=vision
+$	ros2 run ros2_kdl_package ros2_vision_control_node cmd_interface:=velocity ctrl:=vision
 ```
 To switch the auco tag position whit CLI launch this command:
 
 ```shell
-      $	ros2 service call /world/default/set_pose ros_gz_interfaces/srv/SetEntityPose 	"{entity: {name: 'aruco_tag', type: 1}, pose: {position: {x: 1.3, y: 0.6, z: 0.2}, 	orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}}"
-
-    ```
+$	ros2 service call /world/default/set_pose ros_gz_interfaces/srv/SetEntityPose 	"{entity: {name: 'aruco_tag', type: 1}, pose: {position: {x: 1.3, y: 0.6, z: 0.2}, 	orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}}"
+```
