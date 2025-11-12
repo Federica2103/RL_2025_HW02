@@ -114,3 +114,4 @@ To switch the auco tag position whit CLI launch this command:
 ```shell
 $	ros2 service call /world/default/set_pose ros_gz_interfaces/srv/SetEntityPose 	"{entity: {name: 'aruco_tag', type: 1}, pose: {position: {x: 1.3, y: 0.6, z: 0.2}, 	orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}}"
 ```
+you can set different position and orientation.
