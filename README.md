@@ -102,7 +102,7 @@ Then launch:
 ```
 Switch the topic of image_view.
 
-## **. Loop-at-point task with vision-control-based**
+## ** Loop-at-point task with vision-control-based**
 
 If you want activate a vision-control based put this command:
 
