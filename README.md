@@ -43,10 +43,9 @@ This section details how to build and run the Kinematic Control solution.
 
 ## **1A. Parameterized launch and kinematic control execution**
 In the first terminal launch the commands to start RViz:
-
-    ```shell
-      $	ros2 launch iiwa_bringup iiwa.launch.py
-    ```
+```shell
+$ ros2 launch iiwa_bringup iiwa.launch.py
+```
 In another terminal launch the following command:
 
    ```shell
@@ -65,10 +64,9 @@ and then:
 
 ## **1B. Simulation of the Kuka IIWA robot in RViz with the choice of the controller**
 In the first terminal launch the commands to start RViz:
-
-    ```shell
-      $	ros2 launch iiwa_bringup iiwa.launch.py coomand_interface:="velocity" robot_controller:="velocity_command"
-    ```
+```shell
+$	ros2 launch iiwa_bringup iiwa.launch.py coomand_interface:="velocity" robot_controller:="velocity_command"
+```
 In a second terminal launch the following command for the velocity control:
 
  ```shell
