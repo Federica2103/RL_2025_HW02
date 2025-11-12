@@ -43,44 +43,50 @@ This section details how to build and run the Kinematic Control solution.
 
 ## **1A. Parameterized launch and kinematic control execution**
 In the first terminal launch the commands to start RViz:
+
     ```shell
       $	ros2 launch iiwa_bringup iiwa.launch.py
     ```
 In another terminal launch the following command:
+
    ```shell
-      $	ros2 launch ros2_kdl_package kdl_node.launch.py
-    ```
+     $	ros2 launch ros2_kdl_package kdl_node.launch.py
+   ```
 By default the node publishes joint position commands. To use the velocity commands you have to launch the robot with:
+
 ```shell
      ros2 launch iiwa_bringup iiwa.launch.py command_interface:="velocity" robot_controller:="velocity_controller"
-    ```
+```
 and then:
+
 ```shell
      ros2 run ros2_kdl_package ros2_kdl_node cmd_interface:=velocity
-    ```
+```
 
 ## **1B. Simulation of the Kuka IIWA robot in RViz with the choice of the controller**
 In the first terminal launch the commands to start RViz:
+
     ```shell
       $	ros2 launch iiwa_bringup iiwa.launch.py coomand_interface:="velocity" robot_controller:="velocity_command"
     ```
 In a second terminal launch the following command for the velocity control:
+
    ```shell
       $	ros2 launch ros2_kdl_package kdl_node.launch.py cmd_interface:=velocity ctrl:=<type>
-
-    ```
+   ```
 where <type> can be 'velocity_ctrl' or 'velocity_ctrl_null' (to implement a controller that avoids joint limits)
 
 ## **1C. Simulation of the Kuka IIWA robot in RViz with the Action Client structure**
 To simulate with action-client service, after you launched with velocity command, in another terminal you have to launch:
+
    ```shell
       $	ros2 launch ros2_kdl_package kdl_action.launch.py 
-    ```
-And then: 
+   ```
+And then:
+
 ```shell
       $	ros2 run ros2_kdl_package action_client_node <x> <y> <z> 
-
-    ```
+```
 
 ## 🏃 Vision Based Control
 
@@ -92,9 +98,10 @@ In the first terminal launch the command to visualize the robot in Gazebo world:
       $	ros2 launch ros2_kdl_package gaz.launch.py
     ```
 Then launch:
+
    ```shell
       $	ros2 launch aruco_ros single.launch.py marker_size:=0.1 marker_id:=18
-    ```
+   ```
 Switch the topic of image_view.
 
 ## **. Loop-at-point task with vision-control-based**
@@ -103,8 +110,7 @@ If you want activate a vision-control based put this command:
 
 ```shell
       $	ros2 run ros2_kdl_package ros2_vision_control_node cmd_interface:=velocity ctrl:=vision
-
-    ```
+```
 To switch the auco tag position whit CLI launch this command:
 
 ```shell
