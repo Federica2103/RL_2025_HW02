@@ -44,7 +44,7 @@ This section details how to build and run the Kinematic Control solution.
 ## **1A. Parameterized launch and kinematic control execution**
 In the first terminal launch the commands to start RViz:
 ```shell
-$ ros2 launch iiwa_bringup iiwa.launch.py
+ros2 launch iiwa_bringup iiwa.launch.py
 ```
 In another terminal launch the following command:
 
